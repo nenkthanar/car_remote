@@ -75,8 +75,7 @@ const char index_html[] PROGMEM = R"rawliteral(
   </div>
   <div class="content">
     <div class="card">
-      <h2>Output - GPIO 2</h2>
-      <p class="state">state: <span id="state">0</span></p>
+      <h2>JAZZ Status</h2>
       <p class="state">temp: <span id="temp">0</span></p>
       <p><button id="button" class="button">Toggle</button></p>
     </div>
@@ -103,11 +102,10 @@ const char index_html[] PROGMEM = R"rawliteral(
   function onMessage(event) {
     var msg = JSON.parse(event.data);
     if(msg.status == '1'){
-      document.getElementById('state').innerHTML = 'unlock';
+      document.getElementById('button').innerHTML = 'Unlocked';
     }else{
-      document.getElementById('state').innerHTML = 'lock';
+      document.getElementById('button').innerHTML = 'Locked';
     }
-    document.getElementById('state').innerHTML = msg.status;
     document.getElementById('temp').innerHTML = msg.temp;
     console.log(event.data);
   }
