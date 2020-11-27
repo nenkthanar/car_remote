@@ -77,7 +77,7 @@ const char index_html[] PROGMEM = R"rawliteral(
     <div class="card">
       <h2>JAZZ Status</h2>
       <p class="state">temp: <span id="temp">0</span></p>
-      <p><button id="button" class="button">Toggle</button></p>
+      <p><button id="button" class="button">KEY</button></p>
     </div>
   </div>
 <script>
